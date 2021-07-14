@@ -1,0 +1,77 @@
+openapi: 3.0.2
+info:
+  contact:
+    email: info@spilab.es
+    name: Spilab
+    url: https://spilab.es
+  description: This application allows users to send and receive information about
+    a user's health condition.
+  termsOfService: https://events.spilab.es/terms
+  title: Health Alerts
+  version: "1.0"
+servers:
+- url: https://raw.githubusercontent.com/
+paths:
+  /temperature:
+    get:
+      description: Obtain current environment temperature
+      operationId: getTemperature
+      parameters:
+      - description: number of devices
+        explode: true
+        in: query
+        name: devices
+        required: true
+        schema:
+          example: 6
+          format: int32
+          type: integer
+        style: form
+      responses:
+        200:
+          content:
+            text/plain:
+              schema:
+                example: 36.5
+                format: double
+                title: Endpoint found
+                type: number
+          description: Successful response
+        404:
+          content:
+            text/plain:
+              schema:
+                example: Not found
+                title: Endpoint not found
+                type: string
+          description: Not found response
+      summary: Gets the environment temperature
+      tags:
+      - Status
+      x-swagger-router-controller: Status
+components:
+  responses:
+    404:
+      content:
+        text/plain:
+          schema:
+            example: Not found
+            title: Endpoint not found
+            type: string
+      description: Not found response
+    200:
+      content:
+        text/plain:
+          schema:
+            example: Post Correctly
+            title: Succesful response
+            type: string
+      description: Succesful response
+    201:
+      content:
+        text/plain:
+          schema:
+            example: Post Correctly
+            title: Succesful response
+            type: string
+      description: Succesful response
