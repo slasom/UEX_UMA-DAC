@@ -6,17 +6,36 @@ const config = {
   CONTROLLER_DIRECTORY: path.join(__dirname, 'controllers'),
   PROJECT_DIR: __dirname,
 
+  // MQTT:{
+  //   PROTOCOL: 'mqtt',
+  //   HOST: 'broker.hivemq.com',
+  //   PORT: '1883',
+  //   options:{
+  //     username:"",
+  //     password:"",
+  //     clean: true
+  //     //TODO if it's required
+  //   }
+  // }
+
   MQTT:{
     PROTOCOL: 'mqtt',
-    HOST: 'broker.hivemq.com',
+    HOST: '108.129.48.139',
     PORT: '1883',
     options:{
-      username:"",
-      password:"",
+      username:'',
+      password:'',
       clean: true
       //TODO if it's required
     }
-  }
+  },
+
+//TODO: if it's required
+topicSender:"ShoppingCenterDAC",
+topicReceivers:"ShoppingCenterMobile"
+
+
+
 };
 config.OPENAPI_YAML = path.join(config.ROOT_DIR, 'api', 'openapi.yaml');
 config.FULL_PATH = `${config.URL_PATH}:${config.URL_PORT}/${config.BASE_VERSION}`;

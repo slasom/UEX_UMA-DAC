@@ -30,12 +30,10 @@ paths:
       responses:
         200:
           content:
-            text/plain:
+            application/json:
               schema:
-                example: 36.5
-                format: double
-                title: Endpoint found
-                type: number
+                $ref: '#/components/schemas/Temperature'
+                
           description: Successful response
         404:
           content:
@@ -75,3 +73,10 @@ components:
             title: Succesful response
             type: string
       description: Succesful response
+
+  schemas:
+    Temperature:
+      properties:
+       temperature:
+          example: "34.5"
+          type: string
