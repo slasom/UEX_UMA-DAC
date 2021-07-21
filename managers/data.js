@@ -27,10 +27,6 @@ exports.getResult = function(id){
     if (res.length==0)
         return []
 
-    //else
-        //Process the aggregated information
-
-
     deleteRequest(id)
 
     return res;

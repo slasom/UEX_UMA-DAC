@@ -1,7 +1,6 @@
 'use strict';
 
 var vars = require('../index');
-var request = require('request');
 var dataManager=require('./data');
 var DAC = require('../DAC/DAC');
 var config = require('../config');
