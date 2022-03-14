@@ -16,6 +16,7 @@ paths:
     get:
       description: Obtain current environment temperature
       operationId: getTemperature
+      x-dac: 'exampl3'
       parameters:
       - description: number of devices
         explode: true
